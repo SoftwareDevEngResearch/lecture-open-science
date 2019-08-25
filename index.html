@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Building Better Scientific Software - Intro</title>
+		<title>Open Science, Software Citation, and Reproducibility</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -21,100 +21,324 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+		.container{
+			display: flex;
+		}
+		.col{
+			flex: 1;
+		}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown>
-					<textarea data-template>
-						# Building Better Scientific Software
-					</textarea>
-				</section>
-
-				<section data-markdown>
-					<textarea data-template>
-						### Motivation
-
-						Nearly all research relies on software—even experimental—but researchers don't
-						get trained in best practices in the same way as experimental methods.
-					</textarea>
-				</section>
-
-				<section data-markdown>
-					<textarea data-template>
-						### What are we going to talk about?
-
-						- Version control
-						- Collaborative software development
-						- Licensing and copyright 
-						- Testing and test coverage
-						- Continuous integration
-						- Documentation
-						- Open science, software citation
-						- Reproducibility
-					</textarea>
-				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## Who am I?
+							## Open Science, Software Citation, and Reproducibility Best Practices
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							Topics:
+							- Software archival
+							- Software citation
+							- Venues for sharing and publication
+							- Best practices for reproducibility
+						</textarea>
+					</section>
+				</section>
 
-							<img src="./images/kyle-niemeyer-web-face.jpg" height="200" alt="Kyle Niemeyer">
+				<section>
+					<section>
+						<h3>
+							Sharing software (and data) openly has clear benefits to others <em>and</em> yourself
+						</h3>
 
-							Dr. Kyle Niemeyer, Assistant Professor, MIME
+						<p>
+							A paper that isn’t accompanied by the software or data produced is just 
+							<strong>advertising</strong>. 
+							(<a href="http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92">Claerbout & Karrenbach, 1992</a>)
+						</p>
 
-							**Background:** computational combustion modeling
+						<p class="fragment">
+								People find reproducible results more trustworthy…
+						</p>
+						<p class="fragment">
+								…and cite you more! (<a href="https://doi.org/10.7717/peerj.175">Piwowar & Vision, 2013</a>)
+						</p>
+						<p class="fragment">
+							Reduce duplicated effort and increase impact.
+						</p>
+					</section>
+					<section>
+						<h3>Open-Source Software</h3>
+						<p>We've talked about:</p>
+						<ul>
+							<li>Version Control</li>
+							<li>Licensing</li>
+							<li>Documentation</li>
+							<li>Testing</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Great! All done?</h3>
 
-							**Languages:** Matlab, Fortran, C/C++/CUDA, Python
+						<img class="fragment fade-in plain" height="200" src="./images/stop-sign.png" alt="stop sign">
+
+						<p class="fragment">
+							For research, we need one more step: <strong>archival</strong>
+							of software and/or data.
+						</p>
+
+						<p class="fragment">
+							Consider: what if you cite this, then someone modifies or deletes it?
+						</p>
+					</section>
+
+					<section>
+						<h3>Archiving</h3>
+
+						<img class="plain" height="500" src="./images/archiving.png" alt="Archiving process">
+					</section>
+
+					<section>
+						<h3>Live Demo: Connect GitHub to Zenodo</h3>
+	
+						<img class="plain" height="400" src="./images/live-demo-meme.jpeg" alt="Live demo meme">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>
+							Modern science and engineering research depends on software.
+						</h3>
+
+						<p class="fragment">
+							2009 survey: 91% of scientists consider software “important” or “very important” to research. 
+							(<a href="https://doi.org/10.1109/SECSE.2009.5069155">Hannay et al, 2009</a>)
+						</p>
+
+						<p class="fragment">
+							But, 40–70% of software used is not cited.
+							(<a href="https://doi.org/10.1016/j.joi.2015.07.012">Pan et al., 2015</a>.
+							<a href="https://doi.org/10.1002/asi.23538">Howison et al., 2016</a>)
+						</p>
+					</section>
+					<section>
+						<h3>
+							Citing software & data is important.
+						</h3>
+
+						<p class="fragment">
+							Our research results depend on software and data—
+							<strong>different versions of software and data changes our answers.</strong>
+						</p>
+
+						<p class="fragment">
+							Without proper citations, your work is not <strong>reproducible.</strong>
+						</p>
+
+						<p class="fragment">
+							Also, academia relies on citations for credit. 
+							<small>(for better or worse)</small>
+						</p>
+					</section>
+					<section>
+						<h3>Software citation principles</h3>
+						<img height="400" src="./images/software-citation-paper.png" alt="Snapshot of software citation paper">
+						<p><small>
+							Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. 
+							(2016) Software citation principles. PeerJ Computer Science 2:e86 
+							<a href="https://doi.org/10.7717/peerj-cs.86">https://doi.org/10.7717/peerj-cs.86</a>
+						</small></p>
+					</section>
+					<section>
+						<img class="plain" height="600" src="./images/software-citation-principles.png" alt="Software citation principles infographic">
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Principles
+
+							1. **Importance:** software as important as other research products
+							2. **Credit & attribution:** citations should facilitate scholarly credit and attribution to all contributors
+							3. **Unique identification:** citation should include machine actionable, globally unique, interoperable, and recognized identification method
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Principles (2/2)
+
+							4. **Persistence:** Unique identifiers and metadata should persist
+							5. **Accessibility:** Citations should facilitate access to software and associated metadata
+							6. **Specificity:** Citations should facilitate identification of, and access to, specific version of software used
 						</textarea>
 					</section>
 					<section>
-						<a href="https://github.com/kyleniemeyer">
-							<img src="./images/kyle-github-profile.png" height="600" alt="Kyle's GitHub profile">
-						</a>
+						<h2>How to cite?</h2>
+						<p class="fragment">
+							Name/description
+						</p>
+						<p class="fragment">
+							Authors/developers
+						</p>
+						<p class="fragment fade-in-then-semi-out">
+							DOI or other unique/persistent identifier
+						</p>
+						<p class="fragment fade-in">
+							Version number/commit hash
+						</p>
+						<p class="fragment fade-in">
+							Location (e.g., GitHub repo)
+						</p>
+						<p class="fragment fade-in">
+							(If there’s a paper describing it, cite that <em>too</em>)
+						</p>
 					</section>
 					<section>
-						<span class="fragment">
-							<a href="https://oregonstate.edu"
-							  class="image"><img
-							  height="150"
-							  src="https://oregonstate.edu/themes/osu/drupal8-osuhomepage/logo.svg"
-							  alt="Oregon State Logo">
-							</a>
-						</span>
-						<span class="fragment">
-							<a href="https://niemeyer-research-group.github.io"
-							  class="image"><img
-							  height="150"
-							  src="https://niemeyer-research-group.github.io/assets/themes/lab/images/logo/lab-logo.svg"
-							  alt="Niemeyer Research Group logo">
-							</a>
-						</span>
-						<span class="fragment">
-							<a href="https://joss.theoj.org"
-							  class="image"><img
-							  height="150"
-							  src="https://raw.githubusercontent.com/openjournals/digital-assets/master/joss/logo/JOSS_1000x1000.png"
-							  alt="JOSS logo">
-							</a>
-						</span>
-						<span class="fragment">
-							<a href="https://cantera.org"
-							  class="image"><img
-							  height="150"
-							  src="https://cantera.org/assets/img/cantera-logo.png"
-							  alt="Cantera logo">
-							</a>
-						</span>
-						<span class="fragment">
-							<a href="http://urssi.us"
-							  class="image"><img
-							  height="150"
-							  src="https://raw.githubusercontent.com/si2-urssi/logos/master/Images/URSSI-TRANS-CROPPED.png"
-							  alt="URSSI logo">
-							</a>
-						</span>
+						<h2>Where to cite?</h2>
+						<p class="fragment">
+							In the text with the references/bibliography.
+						</p>
+						<div class="container">
+							<div class="col">
+								<img height="250" src="./images/paper-snip1.png" alt="Clip of paper with software citations">
+								<p><small>
+									<a href="http://conference.scipy.org/proceedings/scipy2016/kyle_niemeyer.html">
+										KE Niemeyer, “PyTeCK: a Python-based automatic testing package for chemical kinetic models”. Proceedings of SciPy 2016.
+									</a>
+								</small></p>
+							</div>
+							
+							<div class="col">
+								<img height="150" src="./images/paper-snip2.png" alt="Clip of paper with software citations">
+								<p><small>
+									<a href="https://doi.org/10.1016/j.cpc.2017.02.004">
+										KE Niemeyer, NJ Curtis, & CJ Sung. 
+										“pyJac: analytical Jacobian generator for chemical kinetics” 
+										(2017) Computer Physics Communications, 215:188–203.
+									</a>
+								</small></p>
+							</div>
+						</div>
 					</section>
+				</section>
+				<section>
+					<section>
+						<h2>JOSS: Journal of Open Source Software</h2>
+						<div class="container">
+							<div class="col">
+								<ul>
+									<li><a href="https://joss.theoj.org">https://joss.theoj.org</a></li>
+									<li>Developer-friendly journal for research software packages</li>
+									<li>Affiliate of Open Source Initiative</li>
+									<li>Open access, no fees</li>
+								</ul>
+							</div>
+							
+							<div class="col">
+								<img class="plain" height="300" src="https://raw.githubusercontent.com/openjournals/digital-assets/master/joss/logo/JOSS_1000x1000.png" alt="JOSS logo">
+							</div>
+						</div>
+						<blockquote cite="https://joss.readthedocs.io/en/latest/submitting.html"><small>
+							&ldquo;If you've already licensed your code and have good documentation then we expect that it should take 
+							less than an hour to prepare and submit your paper to JOSS.&rdquo;
+						</small></blockquote>
+					</section>
+					<section>
+						<img class="plain" height="600" src="./images/JOSS-flowchart-landscape.png" alt="JOSS workflow">
+					</section>
+					<section>
+						<h3>JOSS paper submission</h3>
+						<img class="plain" height="500" src="./images/joss-submission.png" alt="JOSS paper submission">
+					</section>
+					<section>
+						<h3>JOSS paper reviews</h3>
+						<img class="plain" height="500" src="./images/joss-reviews.png" alt="JOSS reviews">
+					</section>
+					<section>
+						<h3>JOSS review</h3>
+						<img class="plain" height="500" src="./images/joss-paper-review.png" alt="JOSS paper review">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Reproducibility best practices: "Repro-packs"</h3>
+						<p>
+							Lorena Barba describes 
+							<a href="http://blogs.nature.com/naturejobs/2017/04/17/techblog-my-digital-toolbox-lorena-barba/">
+								“reproducibility packages”
+							</a> 
+							associated with papers, sharing figures under CC-BY:
+						</p>
+						<blockquote cite="http://blogs.nature.com/naturejobs/2017/04/17/techblog-my-digital-toolbox-lorena-barba/"><small>
+								&ldquo;For every figure that presents some result, we bundle the files 
+								needed to reproduce it — input or configuration files used to run the 
+								simulation(s) behind the result; code to process raw data into derived data; 
+								and scripts to create output graphs — and deposit them together with the 
+								figure into an open-data repository, such as Figshare. Figshare assigns the 
+								bundle a DOI, which we then include in the figure caption so readers can easily 
+								find the data and re-create the result. Our lab uses these packages as test 
+								beds for our in-house software, to verify that the results haven’t been 
+								compromised by software modifications. And because we maintain a public history 
+								of all changes, we achieve what one of my students calls 
+								‘unimpeachable provenance’.&rdquo;
+							</small></blockquote>
+					</section>
+					<section>
+						<h3>My practice</h3>
+						<ol>
+							<li>Produce a single “repro-pack” for an entire paper, which contains:</li>
+							<ul>
+								<li>Python plotting scripts and associated results data</li>
+								<li>Figures (PDFs for plots, always)</li>
+								<li>Any other relevant data: input files, configuration files, etc.</li>
+								</ul>
+							<li>Upload to Zenodo under CC-BY license</li>
+							<li>Cite using the resulting DOI in the associated paper(s)</li>
+						</ol>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Benefits
+
+							- Improving reproducibility and impact of your work
+							- Reviewers will love you with this one great trick!
+							- It also lets you reuse your figures without violating the journal copyright. 
+							(Yes, when published, the journal owns the paper and everything in it that isn’t 
+							licensed from somewhere else.)
+						</textarea>
+					</section>
+					<section>
+						<h3>How to cite/mention</h3>
+						<img class="plain" height="300" src="./images/repropack-citation.png" alt="citation of repropack">
+						<img class="plain" height="100" src="./images/repropack-reference.png" alt="reference for repropack">
+						<p><small>
+								<a href="https://doi.org/10.1016/j.cpc.2018.01.015">
+									CP Stone, AT Alferman, & KE Niemeyer. 2018. “Accelerating finite-rate chemical kinetics with coprocessors: comparing vectorization methods on GPUs, MICs, and CPUs.” Computer Physics Communications, 226:18–29.
+								</a>
+						</small></p>
+					</section>
+					<section>
+						<img class="plain" height="600" src="./images/repropack-file-layout.png" alt="File layout of repropack">
+					</section>
+					<section>
+						<h3>Example: pyJac and papers</h3>
+						<div style="font-size:35px">
+						<ul>
+							<li class="fragment">Source code at <a href="https://github.com/SLACKHA/pyJac">github.com/SLACKHA/pyJac</a> has README with basic usage</li>
+							<li class="fragment">Full documentation website with API docs, installation guide, and examples: <a href="https://slackha.github.io/pyJac/">slackha.github.io/pyJac/</a></li>
+							<li class="fragment">Functional and performance testing suites built-in</li>
+							<li class="fragment">Software paper published with full theory details (<a href="https://doi.org/10.1016/j.cpc.2017.02.004">doi.org/10.1016/j.cpc.2017.02.004</a>)</li>
+							<li class="fragment">full source of paper also available via <a href="https://niemeyer-research-group.github.io/pyJac-paper/">niemeyer-research-group.github.io/pyJac-paper/</a></li>
+							<li class="fragment">Data, figures, and figure scripts from paper available openly via Figshare: <a href="https://doi.org/10.6084/m9.figshare.4578010">https://doi.org/10.6084/m9.figshare.4578010</a></li>
+						</ul></div>
+					</section>
+				</section>
+				<section>
+					<h2>Questions?</h2>
 				</section>
 			</div>
 		</div>
