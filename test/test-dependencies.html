@@ -6,9 +6,8 @@
 
 		<title>reveal.js - Test Dependencies</title>
 
-		<link rel="stylesheet" href="../dist/reveal.css">
-		<link rel="stylesheet" href="../node_modules/qunit/qunit/qunit.css">
-		<script src="../node_modules/qunit/qunit/qunit.js"></script>
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="qunit-2.5.0.css">
 	</head>
 
 	<body style="overflow: auto;">
@@ -26,17 +25,13 @@
 
 		</div>
 
-		<script src="../dist/reveal.js"></script>
+		<script src="../js/reveal.js"></script>
+		<script src="qunit-2.5.0.js"></script>
+
 		<script>
 			window.externalScriptSequence = '';
 
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'assets/external-script-a.js' },
-					{ src: 'assets/external-script-b.js' },
-					{ src: 'assets/external-script-c.js' }
-				]
-			}).then( () => {
+			Reveal.addEventListener( 'ready', function() {
 
 				QUnit.module( 'Dependencies' );
 
@@ -45,6 +40,14 @@
 				});
 
 			} );
+
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'assets/external-script-a.js' },
+					{ src: 'assets/external-script-b.js' },
+					{ src: 'assets/external-script-c.js' }
+				]
+			});
 		</script>
 
 	</body>
